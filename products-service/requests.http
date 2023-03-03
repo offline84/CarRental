@@ -1,0 +1,25 @@
+### Create Category 
+
+POST http://localhost:8080/odata/v4/AdminService/CarType
+Content-Type: application/json
+{
+    "ID": 1,
+    "CARTYPE": "Sedan",
+    "DOOR_COUNT": 5
+},
+
+
+### Create Product
+
+POST http://localhost:8080/odata/v4/AdminService/Car
+Content-Type: application/json
+
+{
+"ID": 1,
+"MODEL": "Clio",
+"BRAND": "Renault",
+"COLOR": "Black",
+"TYPE_OF_CAR_ID": 1,
+"VIN_NUMBER": "1G2AL55H097125760",
+"FIRST_USE": "2022-08-24"
+}

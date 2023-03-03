@@ -1,0 +1,128 @@
+### Create Adress
+
+POST http://localhost:8080//odata/v4/RentalService/Adresses
+Content-Type: application/json
+
+{
+   "STREET": "Thisstraat",
+    "NUMBER": 666,
+    "POSTAL_CODE": "9099",
+    "CITY": "SomeWhere",
+    "COUNTRY_code": "BEL"
+}
+
+### Create License 1
+
+POST http://localhost:8080//odata/v4/AdminService/License
+Content-Type: application/json
+
+{
+    "ID": 1,
+    "name": "A",
+    "descr": "Motorcycle"
+}
+
+### Create License 2
+
+POST http://localhost:8080//odata/v4/AdminService/License
+Content-Type: application/json
+
+{
+    "ID": 2,
+    "name": "B",
+    "descr": "Car"
+}
+
+### Create License 3
+
+POST http://localhost:8080//odata/v4/AdminService/License
+Content-Type: application/json
+
+{
+    "ID": 3,
+    "name": "C",
+    "descr": "Truck"
+}
+
+### Create Person
+
+POST http://localhost:8080//odata/v4/RentalService/postPerson
+Content-Type: application/json
+
+{
+    "person":
+    {
+        "NRN": "95061741322",
+        "FIRST_NAME": "John",
+        "LAST_NAME": "Doe",
+        "EMAIL": "jonhdoe@example.com",
+        "TELEPHONE": "0499611522",
+        "ADRES": 
+        {
+        "STREET": "Thisstraat",
+        "NUMBER": 666,
+        "POSTAL_CODE": "9099",
+        "CITY": "SomeWhere",
+        "COUNTRY_code": "BEL"
+        }
+    },
+    "licenses": [
+    {
+        "ID": 2,
+        "name": "B",
+    "descr": "Car"
+},
+    {
+        "ID": 3,
+        "name": "C",
+        "descr": "Truck"
+    }]
+}
+
+### UNBOUND Get Licenses For Driver
+
+GET http://localhost:8080//odata/v4/RentalService/GetLicensesForDriver(nrn='95061741322')
+Content-Type: application/json
+
+### BOUND Get Licenses for driver
+
+GET http://localhost:8080//odata/v4/RentalService/Persons('95061741322')/RentalService.GetLicensesForDriver
+Content-Type: application/json
+
+### Create Vehicle
+
+POST http://localhost:8080//odata/v4/AdminService/Car
+Content-Type: application/json
+Authentication: Basic Ken
+
+{
+"ID": 1,
+"MODEL": "Clio",
+"BRAND": "Renault",
+"COLOR": "Black",
+"TYPE_OF_CAR_ID": 16,
+"VIN_NUMBER": "1G2AL55H097125760",
+"FIRST_USE": "2022-08-24",
+"MILEAGE": 25000,
+"REQUIRED_LICENSE_ID": 2
+}
+
+### Create Ticket
+
+POST http://localhost:8080//odata/v4/RentalService/Tickets
+Content-Type: application/json
+
+{
+    "ID": 2,
+    "DRIVER_NRN": "95061741322",
+    "CAR_ID": 1,
+    "START": "2023-01-10T16:05:00Z"
+}
+
+### Get Tickets
+
+GET http://localhost:8080//odata/v4/RentalService/Tickets
+Content-Type: application/json
+
+###
+DELETE http://localhost:8080//odata/v4/RentalService/Persons('95061741322')

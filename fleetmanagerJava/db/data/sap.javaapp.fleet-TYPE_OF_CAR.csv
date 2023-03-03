@@ -1,0 +1,23 @@
+ID;CARTYPE;DOOR_COUNT
+1;"Sedan";5
+2;"Coupé";3
+3;"Sports car";3
+4;"Station wagon";5
+5;"Hatchback";5
+6;"Hatchback";3
+7;"Convertible";3
+8;"Convertible";5
+9;"SUV";5
+10;"Mini van";5
+11;"Pickup";2
+12;"Pickup";4
+13;"4X4";3
+14;"4X4";5
+15;"Crossover";5
+16;"Supermini";5
+17;"Supermini";3
+18;"City car";5
+19;"City car";3
+20;"Multi Purpose Vehicle(MPV)";5
+21;"Saloon car";5
+22;"Estate car";5

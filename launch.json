@@ -1,0 +1,21 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run fleetmanagerJava-1",
+      "type": "java",
+      "request": "launch",
+      "mainClass": "com.sap.cap.fleetmanagerJava.Application",
+      "projectName": "fleetmanagerJava",
+      "preLaunchTask": "Build fleetmanagerJava",
+      "cwd": "${workspaceFolder}/fleetmanagerJava",
+      "envFile": "${workspaceFolder}/fleetmanagerJava/.env1",
+      "args": [
+        "--spring.profiles.active=default"
+      ],
+      "env": {
+        "run.config": "{\"handlerId\":\"cap_run_config_handler_id\",\"runnableId\":\"{\\\"projectPath\\\":\\\"/home/user/projects/fleetmanagerJava\\\",\\\"profileName\\\":\\\"default\\\"}\"}"
+      }
+    }
+  ]
+}
